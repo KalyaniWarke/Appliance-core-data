@@ -9,6 +9,7 @@
 #import "AddViewController.h"
 #import "AppDelegate.h"
 
+
 @interface AddViewController ()
 
 @end
@@ -118,6 +119,55 @@
             }
         }
     }
+//    if (localSegment.selectedSegmentIndex == 1) {
+//        
+//        if (name.length > 0) {
+//            
+//            if (model.length >0) {
+//                
+//                if (company.length>0) {
+//                    
+//                    
+//                    NSManagedObjectContext *context = [self managedObjectContext];
+//                    
+//                    NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"SmartPhone" inManagedObjectContext:context];
+//                    
+//                    [newDevice setValue:name forKey:@"company"];
+//                    
+//                    [newDevice setValue:model forKey:@"name"];
+//                    
+//                    [newDevice setValue:company forKey:@"price"];
+//                    
+//                    
+//                    //                    NSLog(@"%@",firstField);
+//                    //
+//                    //                    NSLog(@"%@",secondField);
+//                    //                    NSLog(@"%@",thirdField);
+//                    
+//                    
+//                    NSError *error;
+//                    
+//                    if ([context save:&error]) {
+//                        
+//                        NSLog(@"Saved");
+//                        
+//                        [self alertWithTitle:@"Saved!" message:@""];
+//                        
+//                        [self.navigationController popViewControllerAnimated:YES];
+//                    }
+//                    else{
+//                        NSLog(@"Unable to save : %@",error.localizedDescription);
+//                        
+//                        [self alertWithTitle:@"Unable to Save!" message:@"Please Try Again"];
+//                        
+//                        
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    
+//
     
     if (localSegment.selectedSegmentIndex == 1) {
         
@@ -144,7 +194,7 @@
                         
                         NSLog(@"Saved");
                         
-                        [self alertWithTitle:@"Saved!" message:@""];
+                       // [self alertWithTitle:@"Saved!" message:@""];
                         
                         [self.navigationController popViewControllerAnimated:YES];
                     }
@@ -170,7 +220,7 @@
                 
                 NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"AC" inManagedObjectContext:context];
                 
-                [newDevice setValue:name forKey:@"model"];
+                [newDevice setValue:name forKey:@"model_price"];
                 
                 [newDevice setValue:model forKey:@"price"];
                 
@@ -182,7 +232,9 @@
                     
                     NSLog(@"Saved");
                     
-                   [self alertWithTitle:@"Saved!" message:@""];
+                 
+                    
+                    //[self alertWithTitle:@"Saved!" message:@""];
                     
                     
                     [self.navigationController popViewControllerAnimated:YES];
@@ -210,7 +262,9 @@
 
 - (IBAction)actionCancel:(id)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
+    
+   [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 - (IBAction)segmentSecond:(id)sender {

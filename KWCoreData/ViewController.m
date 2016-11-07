@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "customTableViewCell.h"
-#import "AppDelegate.h"
+
+
 
 @interface ViewController ()
 
@@ -37,17 +37,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    tv =[[NSMutableArray alloc]init];
-    smartPhone = [[NSMutableArray alloc]init];
-    ac = [[NSMutableArray alloc]init];
+//    tv =[[NSMutableArray alloc]init];
+//    smartPhone = [[NSMutableArray alloc]init];
+//    ac = [[NSMutableArray alloc]init];
+//
     
     [self.tableView reloadData];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)viewDidAppear:(BOOL)animated {
+    
+    [self fetchDeviceFromCoreData];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -89,7 +93,7 @@
     else if (segments.selectedSegmentIndex == 2)
     {
         NSManagedObject *device =[ac objectAtIndex:indexPath.row];
-        cell.label1.text = [device valueForKey:@"model_year"];
+        cell.label1.text = [device valueForKey:@"model_price"];
         
         cell.label2.text = [device valueForKey:@"price"];
         cell.label3.text=@"";
@@ -168,7 +172,7 @@
 
 
 - (IBAction)segmentFirst:(id)sender {
-    
+    segments=sender;
     
     if (segments .selectedSegmentIndex == 0) {
         [self.tableView reloadData];
